@@ -37,11 +37,203 @@ app.post("/traveldestination", (req,res) => {
         googleMapsLink: req.body.googleMapsLink,
     };
 
-    db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
-            res.status(201);
-            res.send("Got a POST request");            
+    if (travelDestination.title !== "") {
+        if (isNaN(travelDestination.title[0])) {
+            if (travelDestination.title[0].toUpperCase() === travelDestination.title[0]) {
+                if (travelDestination.description !== "") {
+                    if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                        if (isNaN(travelDestination.description[0])) {
+                            if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
+                                if (travelDestination.country !== "") {
+                                    if (isNaN(travelDestination.country)) {
+                                        if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
+                                            if (travelDestination.location !== "") {
+                                                if (isNaN(travelDestination.location[0])) {
+                                                    if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
+                                                        db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                            res.status(201);
+                                                            res.send("Got a POST request");            
+                                                        }
+                                                    );
+                                                    }
+                                                    else {
+                                                        console.log("ERROR: Location must be capitalized!")
+                                                    }
+                                                }
+                                                else {
+                                                    db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                        res.status(201);
+                                                        res.send("Got a POST request");            
+                                                    }
+                                                );
+                                                }
+                                            } else {
+                                                console.log("ERROR: Location input field is empty!")
+                                            }
+                                        }
+                                        else {
+                                            console.log("ERROR: Location must be capitalized!")
+                                        }
+                                    }
+                                    else {
+                                        console.log("ERROR: Country must only contain letters!")
+                                    }
+                                } else {
+                                    console.log("ERROR: Country input field is empty!")
+                                }
+                            }
+                            else {
+                                console.log("ERROR: Description must be capitalized!")
+                            }
+                        }
+                        else {
+                            if (travelDestination.country !== "") {
+                                if (isNaN(travelDestination.country)) {
+                                    if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
+                                        if (travelDestination.location !== "") {
+                                            if (isNaN(travelDestination.location[0])) {
+                                                if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
+                                                    db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                        res.status(201);
+                                                        res.send("Got a POST request");            
+                                                    }
+                                                );
+                                                }
+                                                else {
+                                                    console.log("ERROR: Location must be capitalized!")
+                                                }
+                                            }
+                                            else {
+                                                db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                    res.status(201);
+                                                    res.send("Got a POST request");            
+                                                }
+                                            );
+                                            }
+                                        } else {
+                                            console.log("ERROR: Location input field is empty!")
+                                        }
+                                    }
+                                    else {
+                                        console.log("ERROR: Location must be capitalized!")
+                                    }
+                                }
+                                else {
+                                    console.log("ERROR: Country must only contain letters!")
+                                }
+                            } else {
+                                console.log("ERROR: Country input field is empty!")
+                            }
+                        }
+                    }
+                    else {
+                        console.log("ERROR: Description must be between 150 and 200 characters!")
+                    }
+                } else {
+                    console.log("ERROR: Description input field is empty!")
+                }
+            }
+            else {
+                console.log("ERROR: Title must be capitalized!")
+            }
         }
-    );
+        else {
+            if (travelDestination.description !== "") {
+                if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                    if (isNaN(travelDestination.description[0])) {
+                        if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
+                            if (travelDestination.country !== "") {
+                                if (isNaN(travelDestination.country)) {
+                                    if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
+                                        if (travelDestination.location !== "") {
+                                            if (isNaN(travelDestination.location[0])) {
+                                                if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
+                                                    db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                        res.status(201);
+                                                        res.send("Got a POST request");            
+                                                    }
+                                                );
+                                                }
+                                                else {
+                                                    console.log("ERROR: Location must be capitalized!")
+                                                }
+                                            }
+                                            else {
+                                                db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                    res.status(201);
+                                                    res.send("Got a POST request");            
+                                                }
+                                            );
+                                            }
+                                        } else {
+                                            console.log("ERROR: Location input field is empty!")
+                                        }
+                                    }
+                                    else {
+                                        console.log("ERROR: Location must be capitalized!")
+                                    }
+                                }
+                                else {
+                                    console.log("ERROR: Country must only contain letters!")
+                                }
+                            } else {
+                                console.log("ERROR: Country input field is empty!")
+                            }
+                        }
+                        else {
+                            console.log("ERROR: Description must be capitalized!")
+                        }
+                    }
+                    else {
+                        if (travelDestination.country !== "") {
+                            if (isNaN(travelDestination.country)) {
+                                if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
+                                    if (travelDestination.location !== "") {
+                                        if (isNaN(travelDestination.location[0])) {
+                                            if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
+                                                db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                    res.status(201);
+                                                    res.send("Got a POST request");            
+                                                }
+                                            );
+                                            }
+                                            else {
+                                                console.log("ERROR: Location must be capitalized!")
+                                            }
+                                        }
+                                        else {
+                                            db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
+                                                res.status(201);
+                                                res.send("Got a POST request");            
+                                            }
+                                        );
+                                        }
+                                    } else {
+                                        console.log("ERROR: Location input field is empty!")
+                                    }
+                                }
+                                else {
+                                    console.log("ERROR: Location must be capitalized!")
+                                }
+                            }
+                            else {
+                                console.log("ERROR: Country must only contain letters!")
+                            }
+                        } else {
+                            console.log("ERROR: Country input field is empty!")
+                        }
+                    }
+                }
+                else {
+                    console.log("ERROR: Description must be between 150 and 200 characters!")
+                }
+            } else {
+                console.log("ERROR: Description input field is empty!")
+            }
+        }
+    } else {
+        console.log("ERROR: Title input field is empty!")
+    }
 });
 
 // HTTP GET method
