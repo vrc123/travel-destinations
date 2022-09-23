@@ -45,7 +45,7 @@ app.post("/traveldestination", (req,res) => {
                         if (isNaN(travelDestination.description[0])) {
                             if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                                 if (travelDestination.country !== "") {
-                                    if (isNaN(travelDestination.country)) {
+                                    if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                         if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                             if (travelDestination.location !== "") {
                                                 if (isNaN(travelDestination.location[0])) {
@@ -88,7 +88,7 @@ app.post("/traveldestination", (req,res) => {
                         }
                         else {
                             if (travelDestination.country !== "") {
-                                if (isNaN(travelDestination.country)) {
+                                if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                     if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                         if (travelDestination.location !== "") {
                                             if (isNaN(travelDestination.location[0])) {
@@ -144,7 +144,7 @@ app.post("/traveldestination", (req,res) => {
                     if (isNaN(travelDestination.description[0])) {
                         if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                             if (travelDestination.country !== "") {
-                                if (isNaN(travelDestination.country)) {
+                                if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                     if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                         if (travelDestination.location !== "") {
                                             if (isNaN(travelDestination.location[0])) {
@@ -187,7 +187,7 @@ app.post("/traveldestination", (req,res) => {
                     }
                     else {
                         if (travelDestination.country !== "") {
-                            if (isNaN(travelDestination.country)) {
+                            if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                 if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                     if (travelDestination.location !== "") {
                                         if (isNaN(travelDestination.location[0])) {

@@ -45,7 +45,7 @@ createForm.addEventListener("submit", async (event) => {
                         if (isNaN(travelDestination.description[0])) {
                             if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                                 if (travelDestination.country !== "") {
-                                    if (isNaN(travelDestination.country)) {
+                                    if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                         if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                             if (travelDestination.location !== "") {
                                                 if (isNaN(travelDestination.location[0])) {
@@ -94,7 +94,7 @@ createForm.addEventListener("submit", async (event) => {
                         }
                         else {
                             if (travelDestination.country !== "") {
-                                if (isNaN(travelDestination.country)) {
+                                if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                     if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                         if (travelDestination.location !== "") {
                                             if (isNaN(travelDestination.location[0])) {
@@ -156,7 +156,7 @@ createForm.addEventListener("submit", async (event) => {
                     if (isNaN(travelDestination.description[0])) {
                         if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                             if (travelDestination.country !== "") {
-                                if (isNaN(travelDestination.country)) {
+                                if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                     if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                         if (travelDestination.location !== "") {
                                             if (isNaN(travelDestination.location[0])) {
@@ -205,7 +205,7 @@ createForm.addEventListener("submit", async (event) => {
                     }
                     else {
                         if (travelDestination.country !== "") {
-                            if (isNaN(travelDestination.country)) {
+                            if (travelDestination.country.match(/^[a-zA-Z]+$/)) {
                                 if (travelDestination.country[0].toUpperCase() === travelDestination.country[0]) {
                                     if (travelDestination.location !== "") {
                                         if (isNaN(travelDestination.location[0])) {
