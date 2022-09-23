@@ -41,7 +41,7 @@ app.post("/traveldestination", (req,res) => {
         if (isNaN(travelDestination.title[0])) {
             if (travelDestination.title[0].toUpperCase() === travelDestination.title[0]) {
                 if (travelDestination.description !== "") {
-                    if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                    if (travelDestination.description.length >= 50 && travelDestination.description.length <= 100) {
                         if (isNaN(travelDestination.description[0])) {
                             if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                                 if (travelDestination.country !== "") {
@@ -127,7 +127,7 @@ app.post("/traveldestination", (req,res) => {
                         }
                     }
                     else {
-                        console.log("ERROR: Description must be between 150 and 200 characters!")
+                        console.log("ERROR: Description must be between 50 and 100 characters!")
                     }
                 } else {
                     console.log("ERROR: Description input field is empty!")
@@ -139,7 +139,7 @@ app.post("/traveldestination", (req,res) => {
         }
         else {
             if (travelDestination.description !== "") {
-                if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                if (travelDestination.description.length >= 50 && travelDestination.description.length <= 100) {
                     if (isNaN(travelDestination.description[0])) {
                         if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                             if (travelDestination.country !== "") {
@@ -225,7 +225,7 @@ app.post("/traveldestination", (req,res) => {
                     }
                 }
                 else {
-                    console.log("ERROR: Description must be between 150 and 200 characters!")
+                    console.log("ERROR: Description must be between 50 and 100 characters!")
                 }
             } else {
                 console.log("ERROR: Description input field is empty!")

@@ -30,7 +30,7 @@ createForm.addEventListener("submit", async (event) => {
         if (isNaN(travelDestination.title[0])) {
             if (travelDestination.title[0].toUpperCase() === travelDestination.title[0]) {
                 if (travelDestination.description !== "") {
-                    if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                    if (travelDestination.description.length >= 50 && travelDestination.description.length <= 100) {
                         if (isNaN(travelDestination.description[0])) {
                             if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                                 if (travelDestination.country !== "") {
@@ -120,7 +120,7 @@ createForm.addEventListener("submit", async (event) => {
                         }
                     }
                     else {
-                        alert("ERROR: Description must be between 150 and 200 characters!")
+                        alert("ERROR: Description must be between 50 and 100 characters!")
                     }
                 } else {
                     alert("ERROR: Description input field is empty!")
@@ -132,7 +132,7 @@ createForm.addEventListener("submit", async (event) => {
         }
         else {
             if (travelDestination.description !== "") {
-                if (travelDestination.description.length >= 150 && travelDestination.description.length <= 250) {
+                if (travelDestination.description.length >= 50 && travelDestination.description.length <= 100) {
                     if (isNaN(travelDestination.description[0])) {
                         if (travelDestination.description[0].toUpperCase() === travelDestination.description[0]) {
                             if (travelDestination.country !== "") {
@@ -222,7 +222,7 @@ createForm.addEventListener("submit", async (event) => {
                     }
                 }
                 else {
-                    alert("ERROR: Description must be between 150 and 200 characters!")
+                    alert("ERROR: Description must be between 50 and 100 characters!")
                 }
             } else {
                 alert("ERROR: Description input field is empty!")
