@@ -10,6 +10,17 @@ async function postData(travelDestination) {
     return response;
 }
 
+// Clear createForm
+function clearCreateForm() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#description").value = "";    
+    document.querySelector("#dateFrom").value = "";
+    document.querySelector("#dateTo").value = "";
+    document.querySelector("#country").value = "";    
+    document.querySelector("#location").value = "";
+    document.querySelector("#googleMapsLink").value = "";
+}
+
 // Create new document
 const createForm = document.querySelector("#createForm");
 
@@ -25,7 +36,7 @@ createForm.addEventListener("submit", async (event) => {
         location: document.querySelector("#location").value,
         googleMapsLink: document.querySelector("#googleMapsLink").value,
     };
-
+    
     if (travelDestination.title !== "") {
         if (isNaN(travelDestination.title[0])) {
             if (travelDestination.title[0].toUpperCase() === travelDestination.title[0]) {
@@ -41,9 +52,10 @@ createForm.addEventListener("submit", async (event) => {
                                                     if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
                                                         const response = await postData(travelDestination);
                                                         if (response.status === 201) {
-                                                            console.log("Traveldestination is created!")
+                                                            alert("Traveldestination is created!")
+                                                            clearCreateForm();
                                                         } else {
-                                                            console.log("ERROR: Something went wrong!")    
+                                                            alert("ERROR: Something went wrong!")    
                                                         }
                                                     }
                                                     else {
@@ -52,24 +64,27 @@ createForm.addEventListener("submit", async (event) => {
                                                 }
                                                 else {
                                                     const response = await postData(travelDestination);
-                                                        if (response.status === 201) {
-                                                            console.log("Traveldestination is created!")
-                                                        } else {
-                                                            console.log("ERROR: Something went wrong!")    
-                                                        }
+                                                    if (response.status === 201) {
+                                                        alert("Traveldestination is created!")
+                                                        clearCreateForm();
+                                                    } else {
+                                                        alert("ERROR: Something went wrong!")    
+                                                    }
                                                 }
-                                            } else {
-                                                alert("ERROR: Location input field is empty!")
                                             }
+                                            else {
+                                                alert("ERROR: Location input field is empty!")
+                                            } 
                                         }
                                         else {
-                                            alert("ERROR: Location must be capitalized!")
+                                            alert("ERROR: Country must be capitalized!")
                                         }
                                     }
                                     else {
                                         alert("ERROR: Country must only contain letters!")
                                     }
-                                } else {
+                                }
+                                else {
                                     alert("ERROR: Country input field is empty!")
                                 }
                             }
@@ -86,9 +101,10 @@ createForm.addEventListener("submit", async (event) => {
                                                 if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
                                                     const response = await postData(travelDestination);
                                                     if (response.status === 201) {
-                                                        console.log("Traveldestination is created!")
+                                                        alert("Traveldestination is created!")
+                                                        clearCreateForm();
                                                     } else {
-                                                        console.log("ERROR: Something went wrong!")    
+                                                        alert("ERROR: Something went wrong!")    
                                                     }
                                                 }
                                                 else {
@@ -97,32 +113,36 @@ createForm.addEventListener("submit", async (event) => {
                                             }
                                             else {
                                                 const response = await postData(travelDestination);
-                                                    if (response.status === 201) {
-                                                        console.log("Traveldestination is created!")
-                                                    } else {
-                                                        console.log("ERROR: Something went wrong!")    
-                                                    }
+                                                if (response.status === 201) {
+                                                    alert("Traveldestination is created!")
+                                                    clearCreateForm();
+                                                } else {
+                                                    alert("ERROR: Something went wrong!")    
+                                                }
                                             }
-                                        } else {
-                                            alert("ERROR: Location input field is empty!")
                                         }
+                                        else {
+                                            alert("ERROR: Location input field is empty!")
+                                        } 
                                     }
                                     else {
-                                        alert("ERROR: Location must be capitalized!")
+                                        alert("ERROR: Country must be capitalized!")
                                     }
                                 }
                                 else {
                                     alert("ERROR: Country must only contain letters!")
                                 }
-                            } else {
-                                alert("ERROR: Country input field is empty!")
                             }
+                            else {
+                                alert("ERROR: Country input field is empty!")
+                            }    
                         }
                     }
                     else {
                         alert("ERROR: Description must be between 50 and 100 characters!")
                     }
-                } else {
+                }
+                else {
                     alert("ERROR: Description input field is empty!")
                 }
             }
@@ -143,9 +163,10 @@ createForm.addEventListener("submit", async (event) => {
                                                 if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
                                                     const response = await postData(travelDestination);
                                                     if (response.status === 201) {
-                                                        console.log("Traveldestination is created!")
+                                                        alert("Traveldestination is created!")
+                                                        clearCreateForm();
                                                     } else {
-                                                        console.log("ERROR: Something went wrong!")    
+                                                        alert("ERROR: Something went wrong!")    
                                                     }
                                                 }
                                                 else {
@@ -154,24 +175,27 @@ createForm.addEventListener("submit", async (event) => {
                                             }
                                             else {
                                                 const response = await postData(travelDestination);
-                                                    if (response.status === 201) {
-                                                        console.log("Traveldestination is created!")
-                                                    } else {
-                                                        console.log("ERROR: Something went wrong!")    
-                                                    }
+                                                if (response.status === 201) {
+                                                    alert("Traveldestination is created!")
+                                                    clearCreateForm();
+                                                } else {
+                                                    alert("ERROR: Something went wrong!")    
+                                                }
                                             }
-                                        } else {
+                                        }
+                                        else {
                                             alert("ERROR: Location input field is empty!")
                                         }
                                     }
                                     else {
-                                        alert("ERROR: Location must be capitalized!")
+                                        alert("ERROR: Country must be capitalized!")
                                     }
                                 }
                                 else {
                                     alert("ERROR: Country must only contain letters!")
                                 }
-                            } else {
+                            }
+                            else {
                                 alert("ERROR: Country input field is empty!")
                             }
                         }
@@ -188,9 +212,10 @@ createForm.addEventListener("submit", async (event) => {
                                             if (travelDestination.location[0].toUpperCase() === travelDestination.location[0]) {
                                                 const response = await postData(travelDestination);
                                                 if (response.status === 201) {
-                                                    console.log("Traveldestination is created!")
+                                                    alert("Traveldestination is created!")
+                                                    clearCreateForm();
                                                 } else {
-                                                    console.log("ERROR: Something went wrong!")    
+                                                    alert("ERROR: Something went wrong!")    
                                                 }
                                             }
                                             else {
@@ -199,36 +224,41 @@ createForm.addEventListener("submit", async (event) => {
                                         }
                                         else {
                                             const response = await postData(travelDestination);
-                                                if (response.status === 201) {
-                                                    console.log("Traveldestination is created!")
-                                                } else {
-                                                    console.log("ERROR: Something went wrong!")    
-                                                }
+                                            if (response.status === 201) {
+                                                alert("Traveldestination is created!")
+                                                clearCreateForm();
+                                            } else {
+                                                alert("ERROR: Something went wrong!")    
+                                            }
                                         }
-                                    } else {
+                                    }
+                                    else {
                                         alert("ERROR: Location input field is empty!")
                                     }
                                 }
                                 else {
-                                    alert("ERROR: Location must be capitalized!")
+                                    alert("ERROR: Country must be capitalized!")
                                 }
                             }
                             else {
                                 alert("ERROR: Country must only contain letters!")
                             }
-                        } else {
-                            alert("ERROR: Country input field is empty!")
                         }
+                        else {
+                            alert("ERROR: Country input field is empty!")
+                        }    
                     }
                 }
                 else {
                     alert("ERROR: Description must be between 50 and 100 characters!")
                 }
-            } else {
+            }
+            else {
                 alert("ERROR: Description input field is empty!")
             }
         }
-    } else {
+    }
+    else {
         alert("ERROR: Title input field is empty!")
     }
 });

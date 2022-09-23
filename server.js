@@ -53,8 +53,7 @@ app.post("/traveldestination", (req,res) => {
                                                         db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                             res.status(201);
                                                             res.send("Got a POST request");            
-                                                        }
-                                                    );
+                                                        });
                                                     }
                                                     else {
                                                         console.log("ERROR: Location must be capitalized!")
@@ -64,21 +63,22 @@ app.post("/traveldestination", (req,res) => {
                                                     db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                         res.status(201);
                                                         res.send("Got a POST request");            
-                                                    }
-                                                );
+                                                    });
                                                 }
-                                            } else {
-                                                console.log("ERROR: Location input field is empty!")
                                             }
+                                            else {
+                                                console.log("ERROR: Location input field is empty!")
+                                            } 
                                         }
                                         else {
-                                            console.log("ERROR: Location must be capitalized!")
+                                            console.log("ERROR: Country must be capitalized!")
                                         }
                                     }
                                     else {
                                         console.log("ERROR: Country must only contain letters!")
                                     }
-                                } else {
+                                }
+                                else {
                                     console.log("ERROR: Country input field is empty!")
                                 }
                             }
@@ -96,8 +96,7 @@ app.post("/traveldestination", (req,res) => {
                                                     db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                         res.status(201);
                                                         res.send("Got a POST request");            
-                                                    }
-                                                );
+                                                    });
                                                 }
                                                 else {
                                                     console.log("ERROR: Location must be capitalized!")
@@ -107,29 +106,31 @@ app.post("/traveldestination", (req,res) => {
                                                 db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                     res.status(201);
                                                     res.send("Got a POST request");            
-                                                }
-                                            );
+                                                });
                                             }
-                                        } else {
-                                            console.log("ERROR: Location input field is empty!")
                                         }
+                                        else {
+                                            console.log("ERROR: Location input field is empty!")
+                                        } 
                                     }
                                     else {
-                                        console.log("ERROR: Location must be capitalized!")
+                                        console.log("ERROR: Country must be capitalized!")
                                     }
                                 }
                                 else {
                                     console.log("ERROR: Country must only contain letters!")
                                 }
-                            } else {
-                                console.log("ERROR: Country input field is empty!")
                             }
+                            else {
+                                console.log("ERROR: Country input field is empty!")
+                            }    
                         }
                     }
                     else {
                         console.log("ERROR: Description must be between 50 and 100 characters!")
                     }
-                } else {
+                }
+                else {
                     console.log("ERROR: Description input field is empty!")
                 }
             }
@@ -151,8 +152,7 @@ app.post("/traveldestination", (req,res) => {
                                                     db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                         res.status(201);
                                                         res.send("Got a POST request");            
-                                                    }
-                                                );
+                                                    });
                                                 }
                                                 else {
                                                     console.log("ERROR: Location must be capitalized!")
@@ -162,21 +162,22 @@ app.post("/traveldestination", (req,res) => {
                                                 db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                     res.status(201);
                                                     res.send("Got a POST request");            
-                                                }
-                                            );
+                                                });
                                             }
-                                        } else {
+                                        }
+                                        else {
                                             console.log("ERROR: Location input field is empty!")
                                         }
                                     }
                                     else {
-                                        console.log("ERROR: Location must be capitalized!")
+                                        console.log("ERROR: Country must be capitalized!")
                                     }
                                 }
                                 else {
                                     console.log("ERROR: Country must only contain letters!")
                                 }
-                            } else {
+                            }
+                            else {
                                 console.log("ERROR: Country input field is empty!")
                             }
                         }
@@ -194,8 +195,7 @@ app.post("/traveldestination", (req,res) => {
                                                 db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                     res.status(201);
                                                     res.send("Got a POST request");            
-                                                }
-                                            );
+                                                });
                                             }
                                             else {
                                                 console.log("ERROR: Location must be capitalized!")
@@ -205,33 +205,36 @@ app.post("/traveldestination", (req,res) => {
                                             db.collection("traveldestinations").insertOne(travelDestination, (err,info) => {
                                                 res.status(201);
                                                 res.send("Got a POST request");            
-                                            }
-                                        );
+                                            });
                                         }
-                                    } else {
+                                    }
+                                    else {
                                         console.log("ERROR: Location input field is empty!")
                                     }
                                 }
                                 else {
-                                    console.log("ERROR: Location must be capitalized!")
+                                    console.log("ERROR: Country must be capitalized!")
                                 }
                             }
                             else {
                                 console.log("ERROR: Country must only contain letters!")
                             }
-                        } else {
-                            console.log("ERROR: Country input field is empty!")
                         }
+                        else {
+                            console.log("ERROR: Country input field is empty!")
+                        }    
                     }
                 }
                 else {
                     console.log("ERROR: Description must be between 50 and 100 characters!")
                 }
-            } else {
+            }
+            else {
                 console.log("ERROR: Description input field is empty!")
             }
         }
-    } else {
+    }
+    else {
         console.log("ERROR: Title input field is empty!")
     }
 });
@@ -244,4 +247,4 @@ app.get("/traveldestination", (req,res) => {
             res.send(items);
         }
     );
-})
+});
